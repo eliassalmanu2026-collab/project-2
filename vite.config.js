@@ -6,5 +6,10 @@ export default defineConfig({
   server: {
     host: true,
     port: 3000,
+    // Нужно для работы горячей перезагрузки, когда папка проекта
+    // примонтирована в контейнер Docker (Windows/macOS)
+    watch: {
+      usePolling: true,
+    },
   },
 })
